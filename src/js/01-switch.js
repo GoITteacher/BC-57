@@ -1,3 +1,22 @@
+// const money = 50;
+
+/* switch (money) {
+  case 100:
+    console.log(1);
+    break;
+  case 50:
+    console.log(2);
+    console.log(3);
+  case 0:
+    console.log(4);
+    console.log(5);
+    break;
+  case 200:
+    console.log(6);
+    console.log(7);
+    break;
+} */
+
 /*
  * Напиши скрипт выбора стоимости отеля по кол-ву звёзд.
  * 1 - 20$, 2 - 30$, 3 - 50$, 4 - 70$, 5 - 120$
@@ -6,8 +25,40 @@
  * 'Такого кол-ва звезд нет'
  */
 
-let stars = 1;
-let price;
+/* let stars = 7;
+let price = 0;
+
+switch (stars) {
+  case 1:
+    price = '20$';
+    break;
+  case 2:
+    price = '30$';
+    break;
+  case 3:
+    price = '50$';
+    break;
+  case 4:
+    price = '70$';
+    break;
+  case 5:
+    price = '120$';
+    break;
+  default:
+    console.log('Такого кол-ва звезд нет');
+    break;
+}
+
+console.log(price); */
+
+/* 
+const money = 100;
+const age = 15;
+let result;
+result = age > 18 ? 'HELLO' : 'WORLD';
+
+console.log(result);
+*/
 
 /*
  * Напиши скрипт выбора опции доставки товара.
@@ -19,3 +70,23 @@ let price;
  * - 'Посылка будет отправлена сегодня'
  * - 'Вам перезвонит менеджер'
  */
+
+const option = 99;
+let message;
+
+switch (option) {
+  case 1:
+    message = 'Вы сможете забрать товар завтра с 12:00 в нашем офисе';
+    break;
+  case 2:
+    message = 'Курьер доставит заказ завтра с 9:00 до 18:00';
+    break;
+  case 3:
+    message = 'Посылка будет отправлена сегодня';
+    break;
+  default:
+    message = 'Вам перезвонит менеджер';
+    break;
+}
+
+console.log(message);
