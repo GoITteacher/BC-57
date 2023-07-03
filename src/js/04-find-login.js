@@ -10,5 +10,23 @@
  */
 
 const logins = ['m4ngoDoge', 'k1widab3st', 'poly1scute', 'aj4xth3m4n'];
-const firstLoginToFind = 'm4ngoDoge';
+const firstLoginToFind = 'aj4xth3m4n';
 const secondLoginToFind = 'k1widab3st';
+
+let msg = `Пользователь ${firstLoginToFind} не найден.`;
+
+// for (let i = 0; i < logins.length; i++) {
+//   if (logins[i] === firstLoginToFind) {
+//     msg = `Пользователь ${logins[i]} найден.`;
+//     break;
+//   }
+// }
+
+// for (const login of logins) {
+//   if (login === firstLoginToFind) {
+//     msg = `Пользователь ${login} найден.`;
+//     break;
+//   }
+// }
+
+console.log(msg);

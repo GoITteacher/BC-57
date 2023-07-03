@@ -6,6 +6,11 @@
  * - Потом через join()
  */
 
-const friends = ['Mango', 'Poly', 'Kiwi', 'Ajax'];
+// const friends = ['Mango', 'Poly', 'Kiwi', 'Ajax'];
+// let result = '';
 
+// for (let friend of friends) {
+//   result += ',' + friend;
+// }
+// result.console.log();
 // Должно получиться 'Mango,Poly,Kiwi,Ajax'
