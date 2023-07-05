@@ -82,7 +82,7 @@ console.log(user);
 // console.log(obj);
 
 // ======================
-function foo(x, y) {
+/* function foo(x, y) {
   console.log('HELLO', x, y);
   return x + y;
 }
@@ -108,12 +108,49 @@ const user3 = {
 };
 
 user2.sayHello();
-user3.sayHello();
+user3.sayHello(); */
+
+// ================
+
+const arr = [1, 2, 3, 4, 5];
+
+/* const test = {
+  x: 10,
+  y: 20,
+  q: 123,
+  toString() {
+    return 'test test test';
+  },
+};
+
+console.log(test.toString());
+
+const myObj = {
+  [test]: 'Max',
+};
+
+console.log(myObj); */
 
 /*
  * Ссылочный тип {} === {}
  */
 
+const objA = { x: 10 };
+const objB = objA;
+
+objB.x = 20;
+
+console.log(objA);
+
 /*
  * Массивы и функции это объекты
  */
+
+// const array = [1, 2, 3, 4, 5];
+// array.name = 'MAX';
+// array[0];
+
+// function foo() {}
+// foo.myKEY = 'HELLO';
+// foo.test = 'Max';
+// console.dir(foo);
