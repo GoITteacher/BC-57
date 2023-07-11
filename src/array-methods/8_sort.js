@@ -12,7 +12,7 @@ let cars = [
     make: 'Honda',
     model: 'CR-V',
     type: 'suv',
-    amount: 14,
+    amount: 10,
     price: 24045,
     onSale: true,
   },
@@ -20,7 +20,7 @@ let cars = [
     make: 'Honda',
     model: 'Accord',
     type: 'sedan',
-    amount: 2,
+    amount: 10,
     price: 22455,
     onSale: true,
   },
@@ -28,7 +28,7 @@ let cars = [
     make: 'Mazda',
     model: 'Mazda 6',
     type: 'sedan',
-    amount: 8,
+    amount: 10,
     price: 24195,
     onSale: false,
   },
@@ -89,3 +89,28 @@ let cars = [
     onSale: false,
   },
 ];
+
+cars.sort((a, b) => {
+  if (a.make != b.make) return a.make.localeCompare(b.make);
+
+  if (a.amount === b.amount) {
+    return a.price - b.price;
+  } else {
+    return a.amount - b.amount;
+  }
+});
+
+console.table(cars);
+
+// ===============
+
+// const arr = [99, 10, 6, 1, 4, 6, 7, 2, 5, 7, 98, 3, 2, 46, 8, 43, 2];
+
+// const result = [...arr].sort((b, a) => {
+//   console.log(a - b);
+//   return a - b;
+// });
+
+// console.log(result);
+
+// console.log(String.fromCharCode(0));

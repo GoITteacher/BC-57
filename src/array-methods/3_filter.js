@@ -11,3 +11,12 @@
 */
 
 let array = [1, 3, 56, 1, 5, 78, 2, 6];
+
+const filteredArray = array.filter((value, index, array) => {
+  //   return value > index;
+  //   return value % 2 === 0;
+  //   return index % 2 !== 0;
+});
+
+// [1,3,56,5,78]
+console.log(filteredArray);

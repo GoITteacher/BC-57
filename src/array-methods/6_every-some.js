@@ -8,13 +8,30 @@
  - Перебирання масиву припиняється, якщо колбек повертає false.
 */
 
-let array = [-1, -6, -1, -6, -1, -6, -1, -6, 1];
+// let array = [-1, -5, -1, -1, 5, -2, -4];
+
+// const result = array.every((el, idx, array) => {
+//   console.log(el);
+//   return el % 2 !== 0 && el < 0;
+//   //   return el % 2;
+// });
+// true && true && true && false && true = true;
+
+// console.log(result);
 
 /*
-    SOME
+   SOME
  - Не змінює оригінальний масив.
  - Поелементо перебирає оригінальний масив.
  - Повертає true, якщо хоча б один елемент масиву задовольняє умову.
  - Повертає false, якщо жоден елемент масиву не задовольняє умову.
  - Перебирання масиву припиняється, якщо колбек повертає true.
 */
+
+let array1 = [-1, -5, -1, 1, -5, -2, -4];
+
+const result = array1.some((num, index, array) => {
+  return num > 0;
+});
+
+console.log(result);

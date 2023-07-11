@@ -25,4 +25,10 @@
 //   },
 // ];
 
-let str = ['Roman', 'Anatoliy', 'Anatoliy', 'Anatoliy', 'Anatoliy'];
+let str = ['Roman', 'Anatoliy', 'Max', 'Mila', 'Anatoliy'];
+
+const index = str.findIndex((_, index) => {
+  return value === 'anatoliy';
+});
+
+console.log(index);
