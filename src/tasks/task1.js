@@ -11,5 +11,3 @@ function func(a, b) {
 }
 
 func.call(elem);
-
-func();
