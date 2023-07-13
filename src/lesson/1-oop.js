@@ -6,6 +6,21 @@
 
 */
 
+const user1 = {
+  test: 'max',
+  foo() {},
+};
+
+const user2 = {
+  name: 'max',
+  foo() {},
+};
+
+const user3 = {
+  age: 'max',
+  foo() {},
+};
+
 ////////////////////////////////////////////////
 
 /* 
