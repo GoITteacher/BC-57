@@ -83,3 +83,27 @@ const cars = [
     onSale: false,
   },
 ];
+
+function renderCars() {
+  const filteredArray = cars.sort((a, b) => a.amount - b.amount);
+
+  const markup = filteredArray
+    .map(car => {
+      const carType = car.onSale ? 'bold' : 'tomato';
+
+      return `<tr class="${carType}">
+    <td>${car.make}</td>
+    <td>${car.model}</td>
+    <td>${car.type}</td>
+    <td>${car.amount}</td>
+    <td>${car.price}</td>
+    <td>${car.onSale}</td>
+  </tr>`;
+    })
+    .join('\n\n\n');
+  console.log(markup);
+
+  list.lastElementChild.innerHTML = markup;
+}
+
+renderCars();
