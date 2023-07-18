@@ -8,3 +8,29 @@
  */
 
 const boxRef = document.querySelector('.js-box');
+const boxElem = document.querySelector('.inner-box');
+boxElem.style.position = 'absolute';
+/* boxRef.addEventListener('mouseenter', evt => {
+  evt.currentTarget.classList.add('box--active');
+});
+
+boxRef.addEventListener('mouseleave', evt => {
+  evt.currentTarget.classList.remove('box--active');
+});
+ */
+
+// boxRef.addEventListener('mouseover', evt => {
+//   console.log('over');
+//   //   evt.currentTarget.classList.add('box--active');
+// });
+
+// boxRef.addEventListener('mouseout', evt => {
+//   console.log('out');
+//   //   evt.currentTarget.classList.remove('box--active');
+// });
+
+boxRef.addEventListener('mousemove', evt => {
+  console.log(evt.clientX, evt.clientY);
+  boxRef.style.left = `${evt.clientX} px`;
+  boxRef.style.top = `${evt.clientY} px`;
+});
