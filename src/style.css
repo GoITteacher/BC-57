@@ -145,6 +145,7 @@ body.show-modal .backdrop{
     -moz-background-clip: padding-box;
     background-clip: padding-box;
     cursor: pointer;
+    background-color: red;
 }
 
 

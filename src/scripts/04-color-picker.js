@@ -1,5 +1,5 @@
 let colorPalette = [];
-const LENGTH = 5;
+const LENGTH = 9;
 
 function createPaletteItems() {
   const items = [];
@@ -45,15 +45,45 @@ const refs = {
 
 ////////////////////////////////////////////////////////////////////////////
 
-/* 
-nodeName
-<li class="color-item">
-    <button class="color-body style="background-color:...;"></button>
+function renderCards(palette) {
+  const markup = palette
+    .map(color => {
+      return `<li class="color-item">
+    <button class="color-body" style="background-color: ${color.hex}"></button>
     <div class="color-footer">
-        <div>HEX: ....</div>
-        <div>RGB: ....</div>
-        <div></div>
+      <div>HEX: ${color.hex}</div>
+      <div>RGB: ${color.rgb}</div>
+      <div></div>
     </div>
-</li>
+  </li>`;
+    })
+    .join('\n');
 
-*/
+  refs.itemList.innerHTML = markup;
+}
+renderCards(colorPalette);
+
+refs.itemList.addEventListener('click', e => {
+  if (e.target.nodeName !== 'BUTTON') return;
+  refs.modalElement.style.backgroundColor = e.target.style.backgroundColor;
+  document.body.classList.add('show-modal');
+  document.addEventListener('keydown', onModalEscape);
+});
+
+refs.backdropElem.addEventListener('click', e => {
+  if (e.target !== e.currentTarget) return;
+  document.body.classList.remove('show-modal');
+  document.removeEventListener('keydown', onModalEscape);
+});
+
+refs.btnReloadColor.addEventListener('click', () => {
+  createPaletteItems();
+  renderCards(colorPalette);
+});
+
+function onModalEscape(e) {
+  if (e.code === 'Escape') {
+    document.body.classList.remove('show-modal');
+    document.removeEventListener('keydown', onModalEscape);
+  }
+}
