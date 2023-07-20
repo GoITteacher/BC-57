@@ -117,7 +117,7 @@ img{
     font-size: 18px;
     height: 50px;
     margin-top: 38px;
-    // outline: 0;
+    outline: 0;
     text-align: center;
     width: 100%;
   }
@@ -125,4 +125,19 @@ img{
   .submit:active {
     background-color: #06b;
   }
+
+
+
+  .my-image{
+    border:20px solid red;
+    filter: blur(5px);
+
+  }
+
+
+.my-image.lazyloaded{
+  border: none;
+  filter: blur(0);
+}
   
+
