@@ -21,7 +21,8 @@
   - инициализация и package.json
   - [npmjs.com](https://www.npmjs.com/)
   - работа с пакетами
-    - установка (https://www.npmjs.com/package/uniqid)(https://www.npmjs.com/package/date-fns)
+    - установка
+      (https://www.npmjs.com/package/uniqid)(https://www.npmjs.com/package/date-fns)
     - удаление
   - npm-скрипты
     - pre и post
@@ -37,6 +38,7 @@
   - Импорт пространства имён (namespace)
 
 ---
+
 - [Теория 1](https://flexiple.com/javascript/javascript-require-vs-import/)
 - [Теория 2](https://blog.bitsrc.io/javascript-require-vs-import-47827a361b77)
 - [Теория 3](https://stackoverflow.com/questions/31354559/using-node-js-require-vs-es6-import-export)
