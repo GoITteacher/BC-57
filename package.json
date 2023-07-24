@@ -5,9 +5,15 @@
   "scripts": {
     "start": "parcel src/*.html",
     "build": "parcel build src/*.html --public-url /js-example/",
-    "push": "git add . && git commit -m 'update' && git push",
     "hello": "mkdir hello",
-    "start_js": "node src/scripts/1.js"
+    "start_js": "node src/scripts/1.js",
+    "test": "echo HELLO WORLD",
+    "log": "echo 1",
+    "prelog": "echo 0",
+    "postlog": "echo 2",
+    "prepush": "git add .",
+    "push": "git commit -m 'update'",
+    "postpush": "git push"
   },
   "repository": {
     "type": "git",
