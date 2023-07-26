@@ -8,8 +8,11 @@ import '../css/common.css';
  - Date.now()
 */
 
-/* 
+// const date1 = new Date('1969'); // 50000000
+// const date3 = new Date(9999234345000); // 40000000
 
+// console.log(date1.getTime());
+/* 
 new Date("2030-03-16");
 new Date("2030-03");
 new Date("2018");
@@ -24,17 +27,34 @@ new Date("16 March 2030");
 
 */
 
-const dateMin = new Date();
+// const date = new Date('2020-04-5 04:12:12');
+// const date = new Date();
 
+// date.setFullYear(2025);
+// date.setDate(66);
+// date.setMonth(66);
+// date.setMilliseconds(2000000);
+
+// console.log(date);
+// console.log(date.getFullYear());
+// console.log(date.getDay());
+// console.log(date.getDate());
+// console.log(date.getMonth());
+// console.log(date.getHours());
+// console.log(date.getMinutes());
+// console.log(date.getSeconds());
+// console.log(date.getMilliseconds());
+
+// ==============================
+
+// const date1 = new Date();
+// console.log(Date.now());
 // setTimeout(() => {
-//   const dateMax = new Date();
-//   console.log(dateMax - dateMin);
-// }, 2000);
+//   console.log(Date.now());
+//   console.log(Date.now() - date1);
+// }, 5000);
 
-console.log(dateMin.toTimeString());
-console.log(dateMin.toLocaleTimeString());
-console.log(dateMin.toUTCString());
-console.log(dateMin.toDateString());
-console.log(dateMin.toLocaleString());
-console.log(dateMin.toLocaleDateString());
-console.log(dateMin.getTime());
+// ===============================
+
+// const date = new Date('2020-11-01');
+// console.log(date);

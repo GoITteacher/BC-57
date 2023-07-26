@@ -8,15 +8,11 @@ import '../css/common.css';
  */
 
 const NOTIFICATION_DELAY = 3000;
-let timeoutId = null;
 
 const refs = {
   notification: document.querySelector('.js-alert'),
 };
 
-setTimeout(showNotification, 5000);
-
-timeoutId = setTimeout(hideNotification, 10000);
 /*
  * Функции
  */
@@ -26,10 +22,14 @@ function showNotification() {
 }
 
 function hideNotification() {
-  refs.notification.classList.toggle('is-visible');
+  console.log('hide');
+  refs.notification.classList.remove('is-visible');
 }
 
+setTimeout(showNotification, NOTIFICATION_DELAY);
+let timeoutId = setTimeout(hideNotification, NOTIFICATION_DELAY * 2);
+
 refs.notification.addEventListener('click', () => {
-  clearTimeout(timeoutId);
   hideNotification();
+  clearTimeout(timeoutId);
 });

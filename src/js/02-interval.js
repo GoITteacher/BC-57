@@ -5,33 +5,28 @@ import '../css/common.css';
  */
 
 // let counter = 0;
-// const id = setInterval(
-//   id => {
-//     console.log(`start - ${id}`);
-//     for (let i = 0; i < 1000000000; i++) {}
-//     console.log('end');
-//   },
-//   1000,
-//   counter++,
-// );
 
-// /*
-//  * Очистка интервала с clearInterval(intervalId)
-//  */
+// function myFun() {
+//   counter += 1;
+//   console.log(counter);
+// }
 
-// setTimeout(() => {
-//   console.log('clear');
-//   clearInterval(id);
-// }, 5000);
+// setInterval(myFun, 1000);
 
-setTimeout(() => {
-  console.log('start');
-}, 100);
+/*
+ * Очистка интервала с clearInterval(intervalId)
+ */
 
-setTimeout(() => {
-  console.log('mediana');
-}, 0);
+let counter = 0;
 
-setTimeout(() => {
-  console.log('end');
-}, 0);
+let idInterval = setInterval(myFun, 1000); //6
+
+function myFun() {
+  counter += 1;
+  console.log(counter);
+
+  if (counter === 5) {
+    console.log('clear');
+    clearInterval(idInterval);
+  }
+}
