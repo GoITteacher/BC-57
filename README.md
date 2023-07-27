@@ -1,4 +1,5 @@
 # Promises
+
 - Promise API
   - Promise.prototype.then(result)
   - Promise.prototype.catch(error)

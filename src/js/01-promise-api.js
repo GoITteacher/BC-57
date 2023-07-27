@@ -6,30 +6,37 @@
  *  - Promise.prototype.then(onResolve, onReject)
  */
 
-// promise.then(onFulfilled, onRejected);
+// const myPromise = new Promise(() => {
+//   const rand = Math.random();
 
-const promise = new Promise((resolve, reject) => {
-  const rand = Math.random();
-  setTimeout(() => {
-    if (rand > 0.5) {
-      resolve(rand);
-    } else {
-      reject('Sorry!');
-    }
-  }, 10);
-});
+//   setTimeout(() => {
+//     if (rand > 0.5) {
+//       resolve(rand);
+//     } else {
+//       reject(rand);
+//     }
+//   }, 2000);
+// });
+
+// myPromise.then(onFulfilled, onRejected);
+
+// myPromise.then(onFulfilled).catch(onRejected);
+// myPromise.then(() => {
+//   console.log('Ok');
+// });
+// promise.then(onFulfilled, onRejected);
 
 // promise.then(onFulfilled).catch(onRejected);
 
-// function onFulfilled(result) {
-//   console.log('onFulfilled -> onFulfilled');
-//   console.log(`✅ ${result}`);
-// }
+function onFulfilled(result) {
+  console.log('onFulfilled -> onFulfilled');
+  console.log(`✅ ${result}`);
+}
 
-// function onRejected(error) {
-//   console.log('onRejected -> onRejected');
-//   console.log(`❌ ${error}`);
-// }
+function onRejected(error) {
+  console.log('onRejected -> onRejected');
+  console.log(`❌ ${error}`);
+}
 
 /*
  * Цепочки промисов (chaining)
@@ -37,28 +44,37 @@ const promise = new Promise((resolve, reject) => {
  * Promise.prototype.finally()
  */
 
-promise
-  .then(value1 => {
-    console.log(value1, '-> promise1');
-    return [value1];
+const myPromise = new Promise((resolve, reject) => {
+  resolve(10);
+});
+
+myPromise
+  .then(result1 => {
+    console.log(result1);
+    throw new Error('MY ERROR1');
+    return result1 * 2;
   })
-  .catch(err => {
-    console.log('Error', err);
-    return Promise.reject('err');
+  .then(result => {
+    console.log(result);
+    // throw new Error('MY ERROR2');
+    return result / 4;
   })
-  .then(value2 => {
-    if (value2.length !== 0) {
-      console.log();
-    }
-    return 'food';
+  .then(result1 => {
+    console.log(result1);
+    // throw new Error('MY ERROR3');
+    return `${result1}`;
   })
-  .then(value3 => {
-    return value3;
+  .then(result1 => {
+    console.log('telegram');
+    // throw new Error('MY ERROR4');
+    console.log(result1);
   })
-  .then(value4 => {
-    console.log('value4->', value4);
+  .catch(result1 => {
+    console.log('Err');
+    console.log(result1);
+    console.log('telegram');
+    return 'HELLO ERROR';
   })
-  .catch(() => {
-    console.log('last catch');
-  })
-  .finally(() => {});
+  .finally(() => {
+    console.log('Telegram');
+  });
