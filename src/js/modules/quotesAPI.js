@@ -1,19 +1,24 @@
-import { refs } from "./refs";
-import quotesCardTemplate from "../../templates/quotes-card";
+import { refs } from './refs';
 
-export function showQuotes(quotes) {
-  console.log(quotes);
-  refs.cardContainer2.innerHTML = quotesCardTemplate(quotes);
-}
+export function getQuotes(lang) {
+  const BASE_URL = 'https://quotes15.p.rapidapi.com';
+  const END_POINT = '/quotes/random/';
+  const PARAMS = `?language_code=${lang}`;
+  const url = BASE_URL + END_POINT + PARAMS;
 
-export function getQuotes() {
-  const config = {
+  const options = {
     headers: {
-      "X-RapidAPI-Key": "9b3ff61931msh1b42d77d34e33dap1c29cajsn3d3169e0e2f4",
-      "X-RapidAPI-Host": "quotes15.p.rapidapi.com",
+      'X-RapidAPI-Key': '9b3ff61931msh1b42d77d34e33dap1c29cajsn3d3169e0e2f4',
+      'X-RapidAPI-Host': 'quotes15.p.rapidapi.com',
     },
   };
-  return fetch(`https://quotes15.p.rapidapi.com/quotes/random/?q=123`, config)
-    .then((resp) => resp.json())
-    .then((r) => r);
+
+  return fetch(url, options).then(res => {
+    if (res.ok) {
+      return res.json();
+    } else {
+      // return Promise.reject();
+      throw new Error('Error');
+    }
+  });
 }

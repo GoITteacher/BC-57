@@ -1,23 +1,28 @@
-function getTodos(objParams) {
-  const BASE_URL = 'https://random-user-generator1.p.rapidapi.com';
-  const END_POINT = '/locale/id_ID';
-
-  const params = new URLSearchParams(objParams);
-
-  const options = {
-    headers: {
-      'X-RapidAPI-Key': '9b3ff61931msh1b42d77d34e33dap1c29cajsn3d3169e0e2f4',
-      'X-RapidAPI-Host': 'random-user-generator1.p.rapidapi.com',
-    },
-  };
-
-  return fetch(`${BASE_URL}${END_POINT}?${params}`, options).then(res =>
-    res.json(),
-  );
+const refs = {
+  myListElem: document.querySelector('.js-list'),
+  formElem: document.querySelector('.js-form'),
+};
+function getTodosByUser(id) {
+  const BASE_URL = 'https://jsonplaceholder.typicode.com';
+  const END_POINT = '/todos';
+  const PARAMS = `?userId=${id}`;
+  const url = BASE_URL + END_POINT + PARAMS;
+  return fetch(url).then(res => res.json());
 }
 
-getTodos({
-  limit: 1,
-}).then(users => {
-  document.querySelector('#userName').textContent = users[0].name;
+refs.formElem.addEventListener('submit', e => {
+  e.preventDefault();
+  const userId = e.target.elements.userId.value;
+  getTodosByUser(userId).then(todos => {
+    render(todos);
+  });
 });
+
+function render(data) {
+  const markup = data
+    .map(todo => {
+      return `<li>${todo.title}</li>`;
+    })
+    .join('');
+  refs.myListElem.innerHTML = markup;
+}
