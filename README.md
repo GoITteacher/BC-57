@@ -22,3 +22,25 @@
   </div>
 </li>
 ```
+
+```js
+function getTodos(page = 1, limit = 10) {
+  const BASE_URL = 'https://jsonplaceholder.typicode.com';
+  const END_POINT = '/users?';
+
+  const PARAMS = new URLSearchParams({
+    _page: page,
+    _limit: limit,
+  });
+
+  const url = BASE_URL + END_POINT + PARAMS;
+
+  fetch(url)
+    .then(res => res.json())
+    .then(todos => {
+      console.log(todos);
+    });
+}
+
+getTodos(1, 20);
+```
