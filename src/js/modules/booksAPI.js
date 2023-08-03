@@ -1,17 +1,24 @@
 import axios from 'axios';
 
 const axios2 = axios.create({
-  baseURL: 'http://localhost:5000/books',
+  baseURL: 'http://localhost:5000/boks',
   headers: { test: 'Hello World' },
   params: { sort: 'author' },
 });
+const BASE_URL = 'http://localhost:5000/books';
 
-export class BooksAPIV2 {
-  static getBooks() {
-    return fetch(BASE_URL).then(res => res.json());
+export class BooksAPI {
+  static async getBooks() {
+    const res = await fetch(BASE_URL);
+    if (res.ok) {
+      const result = await res.json();
+      return result;
+    } else {
+      throw new Error('Error get Books');
+    }
   }
 
-  static createBook(newBook) {
+  static async createBook(newBook) {
     const options = {
       method: 'POST',
       body: JSON.stringify(newBook),
@@ -20,10 +27,15 @@ export class BooksAPIV2 {
       },
     };
 
-    return fetch(BASE_URL, options).then(res => res.json());
+    const res = await fetch(BASE_URL, options);
+    if (res.ok) {
+      return res.json();
+    } else {
+      throw new Error('Error Create Book');
+    }
   }
 
-  static updateBook({ id, ...newBook }) {
+  static async updateBook({ id, ...newBook }) {
     const options = {
       method: 'PATCH',
       body: JSON.stringify(newBook),
@@ -32,10 +44,16 @@ export class BooksAPIV2 {
       },
     };
 
-    return fetch(`${BASE_URL}/${id}`, options).then(res => res.json());
+    const res = await fetch(`${BASE_URL}/${id}`, options);
+    if (res.ok) {
+      const result = await res.json();
+      return result;
+    } else {
+      throw new Error('Error update books');
+    }
   }
 
-  static resetBook({ id, ...newBook }) {
+  static async resetBook({ id, ...newBook }) {
     const options = {
       method: 'PUT',
       body: JSON.stringify(newBook),
@@ -44,17 +62,21 @@ export class BooksAPIV2 {
       },
     };
 
-    return fetch(`${BASE_URL}/${id}`, options).then(res => res.json());
+    const res = await fetch(`${BASE_URL}/${id}`, options);
+    const result = await res.json();
+    console.log(result);
+    return result;
   }
-  static deleteBook(id) {
+
+  static async deleteBook(id) {
     const options = {
       method: 'DELETE',
     };
-    return fetch(`${BASE_URL}/${id}`, options);
+    return await fetch(`${BASE_URL}/${id}`, options);
   }
 }
 
-export class BooksAPI {
+export class BooksAPIV2 {
   static getBooks() {
     return axios2.get().then(res => {
       console.log(res);
