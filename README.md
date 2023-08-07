@@ -26,7 +26,8 @@
 ## Project
 
 - Склонувати свій репозиторій
-- У своєму репозиторію перейти на гілку dev - `git checkout dev`
+- У своєму репозиторію перейти на гілку dev (якщо ви раптом ще не в ній) -
+  `git checkout dev`
 - Завантажити [Parcel](https://github.com/goitacademy/parcel-project-template)
 - Розархірувати файли парселю до себе в проєкт
 - У папці partials створити під кожну секцію окремий HTML файл і підключити ці
@@ -75,5 +76,5 @@
 
 ## Посилання
 
-- [FIGMA]()
-- [TЗ]()
+- [FIGMA](https://www.figma.com/file/z7VY1GvA5xVR2ix7xeOfxx/Cinemania?node-id=0%3A1&t=5JeXJy1vNB96LXPG-1)
+- [TЗ](https://docs.google.com/spreadsheets/d/1anL-zBZxQ6vnTtk5qPPqPZqFdQ6aqcEkNlan3SbmpG0/edit?usp=sharing)
