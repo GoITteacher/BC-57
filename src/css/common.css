@@ -211,13 +211,6 @@ img {
   justify-content: space-between;
 }
 
-.book__title{
-
-}
-
-.book__author{
-  
-}
 
 .book__desc{
   height: 100%;
@@ -225,5 +218,6 @@ img {
 }
 
 .book__footer{
-  
+  display: flex;
+  background-color: rgb(222, 222, 222);
 }
